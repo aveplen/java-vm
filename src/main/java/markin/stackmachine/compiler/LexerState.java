@@ -1,0 +1,16 @@
+package markin.stackmachine.compiler;
+
+public enum LexerState {
+  INITIAL,
+  NUMBER,
+  HEXORBINNUMBER,
+  HEXNUMBER,
+  BINNUMBER,
+  LABELREF,
+  INSTRUCTION,
+  LABEL,
+  COMMENT,
+  COMMENTML,
+  COMMENTMLCLOSING,
+  COMMENTSL;
+}

@@ -1,0 +1,6 @@
+markin\stackmachine\compiler\CompilerTest.class
+markin\stackmachine\app\CompilerAppTest.class
+markin\stackmachine\compiler\LexerTest.class
+markin\stackmachine\output\OutputTest.class
+markin\stackmachine\vm\CpuTest.class
+markin\stackmachine\app\VmAppTest.class

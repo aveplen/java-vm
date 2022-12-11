@@ -1,0 +1,53 @@
+/* 01 */   push                 // load array length from memory 0x00
+/* 02 */   0                    //
+/* 03 */   load                 //
+/* 04 */   dup                  //
+                                //
+/* 05 */   push                 // if len(arr) == 0 then goto end, nothing to do
+/* 06 */   &final_routine       //
+/* 07 */   swap                 //
+/* 08 */   jz                   //
+                                //
+/* 09 */   stc                  // move array length from stack top to counter reg
+                                //
+                                //
+/* 10 */   while_1:             //
+/* 11 */   cts                  //
+/* 12 */   load                 //
+/* 13 */   cdec                 //
+/* 14 */   cts                  //
+/* 15 */   push                 //
+/* 16 */   &sum_routine         // when counter == 0, goto sum_routine
+/* 17 */   swap                 //
+/* 18 */   jz                   //
+/* 19 */   push                 //
+/* 20 */   &while_1             //
+/* 21 */   jmp                  //
+                                //
+                                //
+/* 22 */   sum_routine:         // sum values stored on a stack
+/* 23 */   push                 //
+/* 24 */   0                    //
+/* 25 */   load                 //
+/* 26 */   stc                  //
+                                //
+/* 27 */   cdec                 // amount of operations = len(arr)-1
+                                //
+                                //
+/* 28 */   while_2:             // while counter != 0
+/* 29 */   cts                  //
+/* 30 */   push                 //
+/* 31 */   &final_routine       // when counter == 0, goto final_routine
+/* 32 */   swap                 //
+/* 33 */   jz                   //
+                                //
+/* 34 */   add                  //
+/* 35 */   cdec                 //
+/* 36 */   push                 //
+/* 37 */   &while_2             //
+/* 38 */   jmp                  //
+                                //
+                                //
+/* 39 */   final_routine:       // store result in memory 0x00
+/* 40 */   outnh                //
+/* 41 */   term                 //
