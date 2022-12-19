@@ -54,7 +54,7 @@ public class VmConvolutionContext {
 
      sum_routine:
      push
-     &arr_len
+     79
      load
      stc
      cdec
